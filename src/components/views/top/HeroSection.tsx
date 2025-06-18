@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MotionButton } from "@/components/ui/button";
+import { MotionButton } from "@/components/elements/button";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },

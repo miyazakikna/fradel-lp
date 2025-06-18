@@ -7,7 +7,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/elements/accordion";
 
 const containerVariants = {
   hidden: { opacity: 0 },

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/elements/card";
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.9 },
@@ -28,7 +28,7 @@ const textVariants = {
   }
 };
 
-export const CampaignSection = (): JSX.Element => {
+export const Campaign = (): JSX.Element => {
   return (
     <div className="w-full py-12 px-4 bg-black text-white relative">
       <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center">

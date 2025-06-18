@@ -30,7 +30,7 @@ const linkVariants = {
   }
 };
 
-export const FooterSection = (): JSX.Element => {
+export const Footer = (): JSX.Element => {
   return (
     <footer className="bg-black py-10 px-6 md:px-10 text-white">
       <motion.div

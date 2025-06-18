@@ -2,8 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { Card, CardContent } from "@/components/elements/card";
+import { Separator } from "@/components/elements/separator";
 
 const containerVariants = {
   hidden: { opacity: 0 },

@@ -1,15 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { HeroSection } from '@/components/sections/HeroSection'
-import { IssuesSection } from '@/components/sections/IssuesSection'
-import { FeaturesSection } from '@/components/sections/FeaturesSection'
-import { PricingSection } from '@/components/sections/PricingSection'
-import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
-import { ProcessSection } from '@/components/sections/ProcessSection'
-import { CampaignSection } from '@/components/sections/CampaignSection'
-import { FaqSection } from '@/components/sections/FaqSection'
-import { FooterSection } from '@/components/sections/FooterSection'
+import { HeroSection } from '@/components/views/top/HeroSection'
+import { IssuesSection } from '@/components/views/top/IssuesSection'
+import { FeaturesSection } from '@/components/views/top/FeaturesSection'
+import { PricingSection } from '@/components/views/top/PricingSection'
+import { TestimonialsSection } from '@/components/views/top/TestimonialsSection'
+import { ProcessSection } from '@/components/views/top/ProcessSection'
+import { Campaign } from '@/components/layouts/Campaign'
+import { FaqSection } from '@/components/views/top/FaqSection'
+import { Footer } from '@/components/layouts/Footer'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -33,7 +33,7 @@ const sectionVariants = {
   }
 }
 
-export default function Home() {
+export default function TopPage() {
   return (
     <motion.div
       className="bg-white flex flex-row justify-center w-full"
@@ -61,13 +61,13 @@ export default function Home() {
           <ProcessSection />
         </motion.div>
         <motion.div variants={sectionVariants}>
-          <CampaignSection />
+          <Campaign />
         </motion.div>
         <motion.div variants={sectionVariants}>
           <FaqSection />
         </motion.div>
         <motion.div variants={sectionVariants}>
-          <FooterSection />
+          <Footer />
         </motion.div>
       </div>
     </motion.div>

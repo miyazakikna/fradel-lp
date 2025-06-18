@@ -3,8 +3,8 @@
 import { CheckIcon } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/elements/badge";
+import { Card, CardContent } from "@/components/elements/card";
 import { Separator } from "@radix-ui/react-separator";
 
 const cardVariants = {
