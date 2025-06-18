@@ -1,116 +1,67 @@
-'use client'
+'use client';
 
-import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
-// Define footer links data for better maintainability
 const footerLinks = [
-  {
-    id: 1,
-    text: "利用規約",
-    position: { top: "183px", left: "344px" },
-  },
-  {
-    id: 2,
-    text: "プライバシーポリシー",
-    position: { top: "183px", left: "674px" },
-  },
-  {
-    id: 3,
-    text: "特定商取引法に基づく表記",
-    position: { top: "239px", left: "344px" },
-  },
-  {
-    id: 4,
-    text: "会社概要",
-    position: { top: "239px", left: "674px" },
-  },
+  { id: 1, text: "お問い合わせ", href: '/contact' },
+  { id: 2, text: "会社概要", href: 'https://amelio-tech.com' },
+  { id: 4, text: "利用規約", href: '/terms' },
+  { id: 3, text: "プライバシーポリシー", href: '/privacy-policy' },
+  { id: 5, text: "特定商取引法に基づく表記", href: '/tokushoho' },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
+    transition: { staggerChildren: 0.1 }
   }
 };
 
 const linkVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut"
-    }
+    transition: { duration: 0.4, ease: "easeOut" }
   }
 };
 
 export const FooterSection = (): JSX.Element => {
   return (
-    <footer className="w-full bg-transparent">
-      <div className="relative w-full h-[365px] bg-black">
-        <motion.div
-          className="flex flex-col items-center justify-between h-full py-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Logo */}
-          <motion.h2
-            className="text-2xl font-bold text-white font-['Noto_Sans',Helvetica] leading-9"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            FRADEL
-          </motion.h2>
+    <footer className="bg-black py-10 px-6 md:px-10 text-white">
+      <motion.div
+        className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="text-xl font-bold text-white">
+          <p>FRADEL</p>
+          <p className={"text-xs font-normal"}>上質な香りを毎月お届け</p>
+        </div>
 
-          {/* Links container */}
-          <motion.div
-            className="flex flex-wrap justify-center w-full gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {footerLinks.map((link) => (
-              <motion.div
-                key={link.id}
-                className="flex items-center justify-between w-[306px] px-0 py-4 cursor-pointer hover:bg-white/10 rounded-lg transition-colors duration-200"
-                style={{
-                  position: "absolute",
-                  top: link.position.top,
-                  left: link.position.left,
-                }}
-                variants={linkVariants}
-                whileHover={{ scale: 1.02 }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-auto">
+          {footerLinks.map((link) => (
+            <motion.div key={link.id} variants={linkVariants}>
+              <Link
+                href={link.href}
+                className="text-sm flex flex-row items-center justify-between"
               >
-                <div className="relative w-fit mt-[-1.00px] font-normal text-white text-base leading-6 whitespace-nowrap font-['Noto_Sans',Helvetica] tracking-[0]">
-                  {link.text}
-                </div>
-                <ChevronRightIcon className="w-6 h-6 text-white" />
-              </motion.div>
-            ))}
-          </motion.div>
+                {link.text}
+                <ChevronRight className="w-4 h-4 text-white ml-8" />
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
-          {/* Copyright */}
-          <motion.div
-            className="absolute bottom-[14px] left-1/2 transform -translate-x-1/2 font-['Noto_Sans',Helvetica] font-normal text-white text-xs tracking-[0] leading-[18px] whitespace-nowrap"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            © 2025 FRADEL. All rights reserved.
-          </motion.div>
-        </motion.div>
+      <div className="mt-8 text-center text-xs text-white">
+        © 2025 FRADEL. All rights reserved.
       </div>
     </footer>
   );
