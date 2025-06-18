@@ -41,7 +41,7 @@ export default function Home() {
       initial="hidden"
       animate="visible"
     >
-      <div className="bg-white w-full max-w-[1280px] overflow-hidden">
+      <div className="bg-white w-full max-w-1440 overflow-hidden">
         <motion.div variants={sectionVariants}>
           <HeroSection />
         </motion.div>

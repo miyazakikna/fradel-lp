@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { MotionButton } from "@/components/ui/button";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -29,16 +29,16 @@ const staggerContainer = {
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="relative w-full h-[856px]">
+    <section className="relative w-full h-screen">
       <div className="relative w-full h-full bg-[url(/chatgpt-image-2025-6-17--10-52-08-1.png)] bg-cover bg-center flex flex-col items-center justify-center">
-        <motion.div 
-          className="flex flex-col items-center justify-center gap-6 max-w-[444px] mx-auto"
+        <motion.div
+          className="flex flex-col items-center justify-center gap-4 text-center"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 
-            className="font-bold text-white text-[40px] text-center leading-[60px] font-['Noto_Sans',Helvetica] tracking-[0]"
+          <motion.h1
+            className="text-white font-bold text-3xl md:text-4xl"
             variants={fadeInUp}
           >
             ホテルのような香りを
@@ -46,28 +46,28 @@ export const HeroSection = (): JSX.Element => {
             暮らしのなかに
           </motion.h1>
 
-          <motion.h2 
-            className="font-bold text-white text-[32px] leading-[48px] font-['Noto_Sans',Helvetica] text-center tracking-[0]"
+          <motion.h2
+            className="text-white mt-4 font-semibold text-xl md:text-2xl"
             variants={fadeInUp}
           >
-            Fradel
+            FRADEL \ フラデル
           </motion.h2>
 
-          <motion.p 
-            className="font-bold text-white text-2xl text-center leading-9 font-['Noto_Sans',Helvetica] tracking-[0]"
+          <motion.p
+            className="text-white font-medium text-sm md:text-lg"
             variants={fadeInUp}
           >
             上質な香りを毎月お届け
           </motion.p>
 
           <motion.div variants={fadeInUp}>
-            <Button 
-              className="mt-4 bg-black text-white rounded-[50px] font-bold text-sm font-['Noto_Sans',Helvetica] px-10 py-6 h-[42px] hover:bg-black/90 transition-all duration-300 hover:scale-105"
+            <MotionButton
+              className="mt-4 bg-black text-white rounded-full font-semibold text-sm px-6 py-3 hover:bg-black/80 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               今すぐ始める
-            </Button>
+            </MotionButton>
           </motion.div>
         </motion.div>
       </div>

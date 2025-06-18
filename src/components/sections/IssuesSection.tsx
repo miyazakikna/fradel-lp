@@ -28,7 +28,6 @@ const cardVariants = {
 };
 
 export const IssuesSection = (): JSX.Element => {
-  // Data for the issue cards
   const issueCards = [
     {
       id: 1,
@@ -51,22 +50,22 @@ export const IssuesSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full max-w-[1129px] mx-auto my-8">
-      <motion.div 
-        className="flex flex-col items-center gap-4 mb-8"
+    <section className="w-full max-w-960 mx-auto py-20 md:py-24">
+      <motion.div
+        className="flex flex-col items-center gap-4 pt-4 md:pt-8 mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="font-bold text-[#666666] text-[32px] text-center leading-normal font-['Noto_Sans',Helvetica] tracking-[0]">
+        <h2 className="font-bold text-gray-600 text-2xl md:text-3xl text-center">
           こんなお悩みありませんか？
         </h2>
-        <Separator className="w-10 h-1 bg-[#666666]" />
+        <Separator className="w-10 h-1 bg-gray-600" />
       </motion.div>
 
-      <motion.div 
-        className="flex flex-wrap justify-between gap-6"
+      <motion.div
+        className="grid grid-cols-1 lg:grid-cols-3 gap-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -74,22 +73,20 @@ export const IssuesSection = (): JSX.Element => {
       >
         {issueCards.map((card) => (
           <motion.div key={card.id} variants={cardVariants}>
-            <Card
-              className="w-[350px] h-[220px] bg-white rounded-[20px] border border-solid border-[#d0d0d0] relative hover:shadow-lg transition-shadow duration-300"
-            >
-              <CardContent className="p-0">
+            <Card className="w-full max-w-350 mx-auto h-auto bg-white rounded-2xl border hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col gap-4">
+              <div className="flex items-start gap-4">
                 <img
-                  className="absolute w-[34px] h-[79px] top-[35px] left-[25px]"
+                  className="w-[34px] h-[79px]"
                   alt="Element"
                   src={card.imageSrc}
                 />
-                <div className="absolute w-[227px] h-[78px] top-[35px] left-[95px] font-bold text-[#333333] text-xl leading-[30px] font-['Noto_Sans',Helvetica] tracking-[0]">
+                <div className="text-gray-800 font-bold text-xl">
                   {card.title}
                 </div>
-                <div className="absolute w-[293px] top-[140px] left-6 font-normal text-[#666666] text-base leading-6 font-['Noto_Sans',Helvetica] tracking-[0]">
-                  {card.description}
-                </div>
-              </CardContent>
+              </div>
+              <p className="text-gray-600 text-base">
+                {card.description}
+              </p>
             </Card>
           </motion.div>
         ))}

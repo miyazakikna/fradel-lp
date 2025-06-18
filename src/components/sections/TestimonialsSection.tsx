@@ -54,22 +54,22 @@ export const TestimonialsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full max-w-[1172px] mx-auto my-8">
-      <motion.div 
-        className="flex flex-col items-center gap-4 mb-8"
+    <section className="w-full max-w-1440 mx-auto bg-white py-20 md:py-24 relative">
+      <motion.div
+        className="flex flex-col items-center gap-4 pt-4 md:pt-8 mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="font-bold text-[28px] text-center font-['Noto_Sans',Helvetica]">
+        <h2 className="font-bold text-gray-600 text-2xl md:text-3xl text-center">
           お客様の声
         </h2>
-        <Separator className="w-10 h-1 bg-black" />
+        <Separator className="w-10 h-1 bg-gray-600" />
       </motion.div>
 
-      <motion.div 
-        className="grid grid-cols-1 md:grid-cols-3 gap-[13px]"
+      <motion.div
+        className="px-6 grid grid-cols-1 md:grid-cols-3 gap-3"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -78,32 +78,28 @@ export const TestimonialsSection = (): JSX.Element => {
         {testimonials.map((testimonial) => (
           <motion.div key={testimonial.id} variants={cardVariants}>
             <Card
-              className="bg-neutral-100 rounded-[10px] h-[249px] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="bg-neutral-100 rounded-xl h-72 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
-              <CardContent className="p-7 relative">
-                <div className="w-[35px] h-[45px] mb-6">
+              <CardContent className="p-7 relative flex flex-col h-full">
+                <div className="w-[35px] h-[45px] mb-2">
                   <img
-                    className="w-[35px] h-[34px] mt-1.5"
+                    className="w-[35px] h-[34px] mt-1"
                     alt="Group"
                     src={testimonial.imageSrc}
                   />
                 </div>
 
-                <div className="font-bold text-black text-xl font-['Noto_Sans',Helvetica] mb-3">
+                <p className="font-bold text-black text-xl mb-3">
                   {testimonial.rating}
-                </div>
+                </p>
 
-                <div className="w-full mb-6">
-                  <p className="font-normal text-black text-xs leading-normal font-['Noto_Sans',Helvetica]">
-                    {testimonial.text}
-                  </p>
-                </div>
+                <p className="font-normal text-black text-xs mb-6">
+                  {testimonial.text}
+                </p>
 
-                <div className="w-28 h-4">
-                  <p className="font-normal text-black text-xs font-['Noto_Sans',Helvetica]">
-                    {testimonial.person}
-                  </p>
-                </div>
+                <p className="font-normal text-black text-xs mt-auto">
+                  {testimonial.person}
+                </p>
               </CardContent>
             </Card>
           </motion.div>

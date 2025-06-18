@@ -54,7 +54,7 @@ export const FooterSection = (): JSX.Element => {
   return (
     <footer className="w-full bg-transparent">
       <div className="relative w-full h-[365px] bg-black">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-between h-full py-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -62,18 +62,18 @@ export const FooterSection = (): JSX.Element => {
           transition={{ duration: 0.8 }}
         >
           {/* Logo */}
-          <motion.h2 
+          <motion.h2
             className="text-2xl font-bold text-white font-['Noto_Sans',Helvetica] leading-9"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Fradel
+            FRADEL
           </motion.h2>
 
           {/* Links container */}
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center w-full gap-6"
             variants={containerVariants}
             initial="hidden"
@@ -101,14 +101,14 @@ export const FooterSection = (): JSX.Element => {
           </motion.div>
 
           {/* Copyright */}
-          <motion.div 
+          <motion.div
             className="absolute bottom-[14px] left-1/2 transform -translate-x-1/2 font-['Noto_Sans',Helvetica] font-normal text-white text-xs tracking-[0] leading-[18px] whitespace-nowrap"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            © 2025 Fradel. All rights reserved.
+            © 2025 FRADEL. All rights reserved.
           </motion.div>
         </motion.div>
       </div>

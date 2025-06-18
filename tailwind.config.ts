@@ -9,55 +9,54 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "#e5e7eb",
+        input: "#e5e7eb",
+        ring: "#6b7280",
+        background: "#ffffff",
+        foreground: "#1f2937",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#1f2937",
+          foreground: "#f9fafb",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#f3f4f6",
+          foreground: "#1f2937",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "#ef4444",
+          foreground: "#f9fafb",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#f3f4f6",
+          foreground: "#6b7280",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#f3f4f6",
+          foreground: "#1f2937",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "#ffffff",
+          foreground: "#1f2937",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "transparent",
+          foreground: "#1f2937",
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0.5rem",
+        md: "calc(0.5rem - 2px)",
+        sm: "calc(0.5rem - 4px)",
       },
       fontFamily: {
-        sans: [
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        sans: ['var(--font-noto)', 'Noto Sans JP', 'sans-serif'],
+      },
+      maxWidth: {
+        '350': '350px',
+        '500': '500px',
+        '960': '960px',
+        '1120': '1120px',
+        '1440': '1440px',
       },
       keyframes: {
         "accordion-down": {

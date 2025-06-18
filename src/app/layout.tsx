@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
-import { Noto_Sans } from 'next/font/google'
+import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 
-const notoSans = Noto_Sans({
+const notoSans = Noto_Sans_JP({
   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-noto-sans'
+  weight: ['400', '500', '700'],
+  variable: '--font-noto',
 })
 
 export const metadata: Metadata = {
-  title: 'Fradel - ホテルのような香りを暮らしのなかに',
+  title: 'FRADEL - ホテルのような香りを暮らしのなかに',
   description: '上質な香りを毎月お届け',
 }
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={notoSans.variable}>
       <body className={`${notoSans.variable} font-sans`}>{children}</body>
     </html>
   )

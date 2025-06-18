@@ -47,7 +47,7 @@ export const FeaturesSection = (): JSX.Element => {
       image: "/image-5.png",
       title: "ホテルのような上質な香り",
       description:
-        "季節やトレンドに合わせて仕立てた、Fradelオリジナルの香り。市販にはない特別感と深みをお楽しみいただけます。",
+        "季節やトレンドに合わせて仕立てた、FRADELオリジナルの香り。市販にはない特別感と深みをお楽しみいただけます。",
       imagePosition: "left",
     },
     {
@@ -77,44 +77,46 @@ export const FeaturesSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full max-w-[1280px] mx-auto bg-neutral-50 py-12 relative">
-      {/* Top polygon decoration */}
-      <img className="w-full h-[105px]" alt="Polygon" src="/polygon-1.svg" />
+    <section className="w-full max-w-1440 mx-auto bg-neutral-50 pb-20 md:pb-24 relative">
+      <div className="relative w-full aspect-[960/105] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-white"
+          style={{ clipPath: 'polygon(0 0, 50% 100%, 100% 0)' }}
+        ></div>
+      </div>
 
-      {/* Main heading */}
-      <motion.div 
-        className="w-full max-w-[960px] mx-auto mt-16 mb-24 text-center"
+      <motion.div
+        className="w-full mx-auto mt-16 mb-24 text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-5xl leading-[72px] font-bold font-['Noto_Sans',Helvetica] tracking-normal">
-          <span className="text-[#333333]">Fradel </span>
-          <span className="text-[#333333] text-[28px] leading-[42px]">
+        <h2 className="font-bold text-gray-600">
+          <span className="text-3xl md:text-4xl">FRADEL</span>
+          <span className="text-lg md:text-xl">
             は<br />
             あなたにぴったりの香り体験を届けます！
           </span>
         </h2>
       </motion.div>
 
-      {/* Features heading with separator */}
-      <motion.div 
-        className="flex flex-col items-center gap-4 mb-16"
+      <motion.div
+        className="flex flex-col items-center gap-4 pt-4 md:pt-8 mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h3 className="font-bold text-[#666666] text-[32px] text-center font-['Noto_Sans',Helvetica] tracking-normal">
+        <h2 className="font-bold text-gray-600 text-2xl md:text-3xl text-center">
           特徴
-        </h3>
-        <Separator className="w-10 h-1 bg-[#666666]" />
+        </h2>
+        <Separator className="w-10 h-1 bg-gray-600" />
       </motion.div>
 
-      {/* Features content */}
-      <motion.div 
-        className="flex flex-col gap-16 px-4"
+
+      <motion.div
+        className="w-full max-w-1120 mx-auto px-4 flex flex-col gap-16"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -123,26 +125,24 @@ export const FeaturesSection = (): JSX.Element => {
         {features.map((feature) => (
           <motion.div
             key={feature.id}
-            className={`flex flex-col ${feature.imagePosition === "left" ? "md:flex-row" : "md:flex-row-reverse"} gap-10 items-center`}
-            variants={feature.imagePosition === "left" ? featureVariants : featureVariantsRight}
-          >
-            <motion.div 
-              className="w-full md:w-[448px] h-auto"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
+            className={`flex flex-col ${feature.imagePosition === "left" ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10`}
+            variants={feature.imagePosition === "left" ? featureVariants : featureVariantsRight} >
+            <motion.div
+              className="w-full flex-1"
+              transition={{ duration: 0.3 }} >
               <img
-                className="w-full h-auto object-cover max-h-[273px] rounded-lg"
+                className="w-full h-auto object-cover rounded-lg max-h-[320px]"
                 alt={feature.title}
                 src={feature.image}
               />
             </motion.div>
-            <Card className="w-full md:w-[446px] border-none shadow-none bg-transparent">
+
+            <Card className="w-full flex-1 border-none shadow-none bg-transparent">
               <CardContent className="p-0">
-                <h4 className="font-bold text-[#333333] text-xl leading-[30px] font-['Noto_Sans',Helvetica] tracking-normal mb-2">
+                <h4 className="font-bold text-gray-800 text-xl md:text-2xl mb-2">
                   {feature.title}
                 </h4>
-                <p className="font-normal text-[#333333] text-base leading-6 font-['Noto_Sans',Helvetica] tracking-normal">
+                <p className="text-gray-600 text-base">
                   {feature.description}
                 </p>
               </CardContent>
