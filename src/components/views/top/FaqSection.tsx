@@ -35,29 +35,34 @@ export const FaqSection = (): JSX.Element => {
   const faqItems = [
     {
       id: "item-1",
-      question: "香りはどのくらい持続しますか？",
-      answer: "回答が入ります。回答が入ります。回答が入ります。回答が入ります。",
+      question: "最低契約期限はありますか？",
+      answer: "最低契約期間はありません。いつでもLINEから簡単に解約が可能です。",
     },
     {
       id: "item-2",
-      question: "香りを指定できますか？",
-      answer: "回答が入ります。回答が入ります。回答が入ります。回答が入ります。",
+      question: "香りはどのくらい持続しますか？",
+      answer: "約1ヶ月間しっかり香りが続くよう調整しています。ただし、気温や設置場所によって前後する場合があります。",
     },
     {
       id: "item-3",
       question: "過去の香りが気になります。",
-      answer: "回答が入ります。回答が入ります。回答が入ります。回答が入ります。",
+      answer: "過去にお届けした香りは、LINEでのご案内やSNSで紹介しています。再登場することもありますのでお楽しみに。",
     },
     {
       id: "item-4",
-      question: "香りの種類が知りたいです。",
-      answer: "回答が入ります。回答が入ります。回答が入ります。回答が入ります。",
+      question: "香りを指定できますか？",
+      answer: "香りはおまかせとなります。毎月、季節やテーマに合わせた香りをセレクトしてお届けします。",
     },
     {
       id: "item-5",
-      question: "最低契約期限はありますか？",
-      answer: "回答が入ります。回答が入ります。回答が入ります。回答が入ります。",
+      question: "支払い日が知りたいです。",
+      answer: "先払い制となっており、お申込み時に初回分（翌月1日にお届け分）をお支払い。以降は毎月1日に自動でお支払いとなります。（例：6月20日にお申込み、7月1日に8月分を自動支払い）",
     },
+    {
+      id: "item-6",
+      question: "香りの種類が知りたいです。",
+      answer: "香りはフローラル系、ウッディ系、シトラス系など様々です。詳しい内容は毎月のお届け前にLINEでご案内いたします。",
+    }
   ];
 
   return (
@@ -81,7 +86,7 @@ export const FaqSection = (): JSX.Element => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="w-full max-w-[964px] mx-auto"
+          className="w-full max-w-960 mx-auto"
         >
           <Accordion
             type="single"

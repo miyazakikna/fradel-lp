@@ -7,10 +7,10 @@ import Link from "next/link";
 
 const footerLinks = [
   { id: 1, text: "お問い合わせ", href: '/contact' },
-  { id: 2, text: "会社概要", href: 'https://amelio-tech.com' },
-  { id: 4, text: "利用規約", href: '/terms' },
+  { id: 2, text: "運営会社", href: 'https://amelio-tech.com' },
+  // { id: 4, text: "利用規約", href: '/terms' },
   { id: 3, text: "プライバシーポリシー", href: '/privacy-policy' },
-  { id: 5, text: "特定商取引法に基づく表記", href: '/tokushoho' },
+  { id: 4, text: "特定商取引法に基づく表記", href: '/tokushoho' },
 ];
 
 const containerVariants = {
@@ -61,7 +61,7 @@ export const Footer = (): JSX.Element => {
       </motion.div>
 
       <div className="mt-8 text-center text-xs text-white">
-        © 2025 FRADEL. All rights reserved.
+        © FRADEL. All rights reserved.
       </div>
     </footer>
   );

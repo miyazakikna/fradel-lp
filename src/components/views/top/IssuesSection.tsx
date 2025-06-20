@@ -33,19 +33,19 @@ export const IssuesSection = (): JSX.Element => {
       id: 1,
       title: "気づいたら香りが消え、容器だけ部屋の隅に",
       description: "インテリアの一部のようで、実はもう使っていない",
-      imageSrc: "/24024991-3.png",
+      imageSrc: "/icon-fragrance-red.png",
     },
     {
       id: 2,
       title: "ホテルライクな空間にあと一歩届かない",
       description: "インテリアは整えても、なんだか生活感が残る",
-      imageSrc: "/24024991-2.png",
+      imageSrc: "/icon-fragrance-yellow.png",
     },
     {
       id: 3,
       title: "色々な香りを体験してみたい",
       description: "出先で偶然見つけたような巡り合いの香りを楽しみたい",
-      imageSrc: "/24024991-1.png",
+      imageSrc: "/icon-fragrance-purple.png",
     },
   ];
 
@@ -73,7 +73,7 @@ export const IssuesSection = (): JSX.Element => {
       >
         {issueCards.map((card) => (
           <motion.div key={card.id} variants={cardVariants}>
-            <Card className="w-full max-w-350 mx-auto h-auto bg-white rounded-2xl border hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col gap-4">
+            <Card className="w-full max-w-350 mx-auto h-auto bg-white rounded-2xl border shadow-lg transition-shadow duration-300 p-7 flex flex-col gap-4">
               <div className="flex items-start gap-4">
                 <img
                   className="w-[34px] h-[79px]"

@@ -75,7 +75,7 @@ export const PricingSection = (): JSX.Element => {
                     <span className="font-bold">＋1500円</span>
                   </Badge>
 
-                  <div className="flex flex-col items-start gap-4 w-full max-w-xs mb-8">
+                  <div className="flex flex-col items-start gap-4 w-full max-w-60 mb-8">
                     {pricingFeatures.map((feature, index) => (
                       <motion.div
                         key={index}
@@ -86,7 +86,7 @@ export const PricingSection = (): JSX.Element => {
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                       >
                         <div className="w-5 h-5 bg-black rounded-md flex items-center justify-center">
-                          <CheckIcon className="w-3 h-2.5 text-white" />
+                          <CheckIcon size={15} strokeWidth={3} className="text-white" />
                         </div>
                         <span className="font-bold text-gray-600 text-sm">
                           {feature.text}
@@ -98,11 +98,9 @@ export const PricingSection = (): JSX.Element => {
                   <div className="w-full bg-neutral-100 rounded-lg p-3">
                     <div className="flex flex-col items-center">
                       <div className="flex items-center gap-2 mb-1">
-                        <img
-                          className="w-4 h-4"
-                          alt="Shipping icon"
-                          src="/group-3.png"
-                        />
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13.4558 3.53388L7.36583 0.0958125C7.13947 -0.0319375 6.86276 -0.0319375 6.63643 0.0958125L0.919318 3.32314C0.686158 3.45475 0.542029 3.70171 0.542084 3.96938L0.544025 10.0291C0.544135 10.2965 0.688099 10.5432 0.920931 10.6748L6.63616 13.904C6.86265 14.032 7.13956 14.032 7.36604 13.904L13.081 10.6749C13.3139 10.5433 13.458 10.2964 13.4579 10.0288L13.4558 3.53388ZM12.347 4.80845V9.81304L9.07924 11.6588L7.44512 12.578V7.57356L9.20054 6.58254V8.36328L9.19728 9.24842L9.20054 9.24656V9.25433L11.2458 8.09927V5.42656L11.9965 5.00273L12.347 4.80845ZM11.7636 3.85807L10.6827 4.46942L7.55841 2.7049L5.9192 1.77499L7.00109 1.16534L10.128 2.93062L11.7636 3.85807ZM6.55637 10.9432L6.55311 12.5795L1.65517 9.81304V4.80482L6.55637 7.57315V10.9432ZM2.23857 3.8541L3.87545 2.9292L7.01462 4.70211L8.64015 5.6242L7.00106 6.54905L3.84783 4.76733L2.23857 3.8541Z" fill="#4B4B4B" />
+                        </svg>
                         <span className="font-bold text-black text-xs text-center">
                           配送について
                         </span>

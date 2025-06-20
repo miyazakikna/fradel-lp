@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MotionButton } from "@/components/elements/button";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -61,13 +61,18 @@ export const HeroSection = (): JSX.Element => {
           </motion.p>
 
           <motion.div variants={fadeInUp}>
-            <MotionButton
-              className="mt-4 bg-black text-white rounded-full font-semibold text-sm px-6 py-3 hover:bg-black/80 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <motion.div
+              animate={{ scale: [1, 1.3, 1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              className="mt-8"
             >
-              今すぐ始める
-            </MotionButton>
+              <Link
+                href="/"
+                className=" bg-black text-white rounded-full font-semibold text-sm px-6 py-3 hover:bg-black/70 transition-all duration-300"
+              >
+                今すぐ始める
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
