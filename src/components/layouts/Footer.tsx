@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const footerLinks = [
   { id: 1, text: "お問い合わせ", href: '/contact' },
-  { id: 2, text: "運営会社", href: 'https://amelio-tech.com' },
+  { id: 2, text: "運営会社", href: 'https://amelio-tech.com/company' },
   // { id: 4, text: "利用規約", href: '/terms' },
   { id: 3, text: "プライバシーポリシー", href: '/privacy-policy' },
   { id: 4, text: "特定商取引法に基づく表記", href: '/tokushoho' },
